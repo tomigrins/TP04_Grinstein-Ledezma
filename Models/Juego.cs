@@ -1,34 +1,37 @@
 namespace TP04_Grinstein_Ledezma.Models;
 
 public class Juego{
-    public string palabra {get; private set;}
-    public List <char> letras {get; private set;}
-    public char intneto {get; private set;}
-    public int cantIntentos {get; private set;}
-    public List <char> letrasAdivinadas {get; private set;}
-    public Juego (string palabra, int cantIntentos){
-        this.palabra = palabra;
-        this.letras = new List <char>();
-        this.cantIntentos = cantIntentos;
-        this.letrasAdivinadas = new List<char>();
-    }
-    public void inicializarJuego(){
+    static public string palabra {get; private set;}
+    static public List <char> letrasUsadas {get; private set;}
+    static public int cantIntentos {get; private set;}
+    static public List <char> letrasAdivinadas {get; private set;}
+    static public int cantLetras {get; private set;}
+    static public void inicializarJuego(){
         palabra = "jazz";
+        cantIntentos = 0;
+        cantLetras = contarLetras(palabra);
     }
-    public void agregarIntento(char intneto){
-        bool usada = intentoYaUsado(intneto);
+    static private int contarLetras (string palabra){
+        int num = palabra.Length;
+        return num;
+    }
+    public void agregarIntento(char intento){
+        bool usada = intentoYaUsado(intento);
         if(!usada){
         cantIntentos++;
-        letras.Add(intneto);
-        bool acerto = verificarIntento(intneto);
+        letrasUsadas.Add(intento);
+        bool acerto = verificarIntento(intento);
+        if (acerto){
+            letrasAdivinadas.Add(intento);
+        }
         }
     }
-    private bool verificarIntento(char intneto){
+    private bool verificarIntento(char intento){
         foreach (char c in palabra)
         {
-            if (c == intneto)
+            if (c == intento)
             {
-                letrasAdivinadas.Add(intneto);
+                letrasAdivinadas.Add(intento);
                 return true;
             }
         }
@@ -36,7 +39,7 @@ public class Juego{
     }
     private bool intentoYaUsado(char intento)
     {
-        foreach (char l in letras)
+        foreach (char l in letrasUsadas)
         {
             if (l == intento)
             {
@@ -45,5 +48,15 @@ public class Juego{
         }
         return false;
     }
-
+    static public void arriesgoPalabra(string palabra){
+        cantIntentos++;
+        bool acerto = verificarPalabra(palabra);
+    }
+    static private bool verificarPalabra(string palabra){
+        bool acerto = false;
+        if (Juego.palabra == palabra){
+            acerto = true;
+        }
+        return acerto;
+    }
 }

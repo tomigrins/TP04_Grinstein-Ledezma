@@ -16,6 +16,8 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         Juego.inicializarJuego();
+        ViewBag.letrasUsadas = Juego.letrasUsadas;
+        ViewBag.cantIntentos = Juego.cantIntentos;
         return View();
     }
 }

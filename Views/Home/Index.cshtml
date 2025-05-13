@@ -3,6 +3,13 @@
 }
 
 <div>
-    <h1>Index</h1>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
+    <h1>Ahoracado</h1>
+    <h1>Letras Utilizadas<h1>
+    @foreach(char letra in ViewBag.letrasUsadas){
+        <h1>@ViewBag.letrasUsadas[letra]</h1>
+    }
+    <h1>Intentos</h1>
+    @foreach (int numero in ViewBag.cantIntentos){
+        <h1>@ViewBag.cantIntentos[numero]</h1>
+    }
 </div>
