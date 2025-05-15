@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP04_Grinstein-Ledezma")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+705d8bb301fc3cea5a2bdff9ebc7561b146ed192")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31e5668e4199262b0fb631e7dbc4c6d6866cd71e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP04_Grinstein-Ledezma")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP04_Grinstein-Ledezma")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

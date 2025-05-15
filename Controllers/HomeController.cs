@@ -13,11 +13,41 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+public IActionResult Index()
+{
+    if (Juego.palabra == null)
     {
-        Juego.inicializarJuego();
-        ViewBag.letrasUsadas = Juego.letrasUsadas;
-        ViewBag.cantIntentos = Juego.cantIntentos;
-        return View();
+        Juego.inicializarJuego(); // Asegurate de tener un método así en tu clase Juego.cs
     }
+
+    ViewBag.palabra = Juego.palabra;
+    ViewBag.letrasAdivinadas = Juego.letrasAdivinadas;
+    ViewBag.letrasUsadas = Juego.letrasUsadas;
+
+    return View();
+}
+
+public IActionResult Ganaste()
+{
+    return View("Ganaste");
+}
+public IActionResult JugarLetra(char letra)
+{
+    Juego.Letra(letra);
+
+   ViewBag.palabra = Juego.palabra;
+ViewBag.letrasUsadas = Juego.letrasUsadas;
+ViewBag.letrasAdivinadas = Juego.letrasAdivinadas;
+ViewBag.cantIntentos = Juego.cantIntentos;
+ViewBag.cantLetras = Juego.cantLetras;
+
+    if (Juego.letrasAdivinadas.Count == Juego.cantLetras)
+    {
+        return RedirectToAction("Ganaste");
+    }
+
+    return View("Index");
+}
+
+
 }

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\TP04_Grinstein-Ledezma.props" />
+</Project>

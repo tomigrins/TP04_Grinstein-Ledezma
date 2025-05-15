@@ -1,16 +1,35 @@
 namespace TP04_Grinstein_Ledezma.Models;
 
 public class Juego{
-    static public string palabra {get; private set;}
-    static public List <char> letrasUsadas {get; private set;}
+    static public string palabra {get; private set;}="";
+    static public List <char> letrasUsadas {get; private set;} = new List<char>();
     static public int cantIntentos {get; private set;}
-    static public List <char> letrasAdivinadas {get; private set;}
+    static public List <char> letrasAdivinadas {get; private set;} = new List<char>();
     static public int cantLetras {get; private set;}
     static public void inicializarJuego(){
         palabra = "jazz";
         cantIntentos = 0;
         cantLetras = contarLetras(palabra);
     }
+    
+public static bool Letra(char intento)
+{
+    if (intentoYaUsado(intento))
+        return false;
+
+    cantIntentos++;
+    letrasUsadas.Add(intento);
+
+    bool acerto = palabra.Contains(intento);
+
+    if (acerto && !letrasAdivinadas.Contains(intento))
+        letrasAdivinadas.Add(intento);
+
+    return acerto;
+}
+
+
+
     static private int contarLetras (string palabra){
         int num = palabra.Length;
         return num;
@@ -37,17 +56,11 @@ public class Juego{
         }
         return false;
     }
-    private bool intentoYaUsado(char intento)
-    {
-        foreach (char l in letrasUsadas)
-        {
-            if (l == intento)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+  private static bool intentoYaUsado(char intento)
+{
+    return letrasUsadas.Contains(intento);
+}
+
     static public void arriesgoPalabra(string palabra){
         cantIntentos++;
         bool acerto = verificarPalabra(palabra);
