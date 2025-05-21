@@ -13,41 +13,60 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-public IActionResult Index()
-{
-    if (Juego.palabra == null)
+    public IActionResult Index()
     {
-        Juego.inicializarJuego(); // Asegurate de tener un método así en tu clase Juego.cs
+        Juego.inicializarJuego();
+
+        ViewBag.Tablero = Juego.tablero;
+        ViewBag.palabra = Juego.palabra;
+        ViewBag.letrasAdivinadas = Juego.letrasAdivinadas;
+        ViewBag.letrasUsadas = Juego.letrasUsadas;
+        ViewBag.cantLetras = Juego.cantLetras;
+
+        return View();
     }
 
-    ViewBag.palabra = Juego.palabra;
-    ViewBag.letrasAdivinadas = Juego.letrasAdivinadas;
-    ViewBag.letrasUsadas = Juego.letrasUsadas;
-
-    return View();
-}
-
-public IActionResult Ganaste()
-{
-    return View("Ganaste");
-}
-public IActionResult JugarLetra(char letra)
-{
-    Juego.Letra(letra);
-
-   ViewBag.palabra = Juego.palabra;
-ViewBag.letrasUsadas = Juego.letrasUsadas;
-ViewBag.letrasAdivinadas = Juego.letrasAdivinadas;
-ViewBag.cantIntentos = Juego.cantIntentos;
-ViewBag.cantLetras = Juego.cantLetras;
-
-    if (Juego.letrasAdivinadas.Count == Juego.cantLetras)
+    public IActionResult Ganaste()
     {
-        return RedirectToAction("Ganaste");
+        return View("Ganaste");
     }
 
-    return View("Index");
-}
+    public IActionResult JugarLetra(char letra)
+    {
+        Juego.Letra(letra);
 
+        if (Juego.verificarPalabra())
+        {
+            return RedirectToAction("Ganaste");
+        }
+
+        return RedirectToAction("VolverAJugar");
+    }
+
+    public IActionResult VolverAJugar()
+    {
+        ViewBag.palabra = Juego.palabra;
+        ViewBag.letrasUsadas = Juego.letrasUsadas;
+        ViewBag.letrasAdivinadas = Juego.letrasAdivinadas;
+        ViewBag.cantIntentos = Juego.cantIntentos;
+        ViewBag.cantLetras = Juego.cantLetras;
+        ViewBag.Tablero = Juego.tablero;
+
+        return View("Index");
+    }
+    [HttpPost]
+    public IActionResult arriesgoPalabra(string palabra)
+    {
+        Juego.cantIntentos++;
+        bool acerto = palabra.ToLower() == Juego.palabra;
+        if (acerto)
+        {
+            return RedirectToAction("Ganaste");
+        }
+        else
+        {
+            return RedirectToAction("VolverAJugar");
+        }
+    }
 
 }
