@@ -1,23 +1,25 @@
 namespace TP04_Grinstein_Ledezma.Models;
 
 public class Juego{
-    static public string palabra {get; private set;} = "";
-    static public List<char> letrasUsadas {get; private set;} = new List<char>();
-    static public int cantIntentos {get; set;}
-    static public List<char> letrasAdivinadas {get; private set;} = new List<char>();
-    static public int cantLetras {get; private set;}
-    static public string tablero {get; private set;} = "";
 
-    static public void inicializarJuego(){
+     public string palabra {get; private set;} = "";
+     public List<char> letrasUsadas {get; private set;} = new List<char>();
+     public int cantIntentos {get; set;}
+     public List<char> letrasAdivinadas {get; private set;} = new List<char>();
+     public int cantLetras {get; private set;}
+     public string tablero {get; private set;} = "";
+
+     public void inicializarJuego(){
         palabra = "leocrack";
         cantIntentos = 0;
         letrasUsadas = new List<char>();
         letrasAdivinadas = new List<char>();
         cantLetras = contarLetras(palabra);
         actualizarTablero();
+        
     }
 
-    public static bool Letra(char intento)
+    public  bool Letra(char intento)
     {
         if (intentoYaUsado(intento))
             return false;
@@ -36,7 +38,7 @@ public class Juego{
         return acerto;
     }
 
-    static private int contarLetras(string palabra){
+     private int contarLetras(string palabra){
         return palabra.Length;
     }
 
@@ -62,11 +64,11 @@ public class Juego{
         return false;
     }
 
-    private static bool intentoYaUsado(char intento){
+    private  bool intentoYaUsado(char intento){
         return letrasUsadas.Contains(intento);
     }
 
-    static public bool verificarPalabra(){
+     public bool verificarPalabra(){
         foreach (char c in palabra){
             if (!letrasAdivinadas.Contains(c))
                 return false;
@@ -74,7 +76,7 @@ public class Juego{
         return true;
     }
 
-    static public void actualizarTablero(){
+     public void actualizarTablero(){
         tablero = "";
         foreach (char c in palabra){
             if (letrasAdivinadas.Contains(c))

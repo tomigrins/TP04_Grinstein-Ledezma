@@ -1,63 +1,63 @@
 {
   "Files": [
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "Z:\\2025\\Programacion\\TP04_Grinstein-Ledezmaok\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\49190820\\TP04_Grinstein-Ledezma\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

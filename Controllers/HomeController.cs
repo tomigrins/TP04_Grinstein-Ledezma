@@ -15,17 +15,21 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Juego.inicializarJuego();
+        
+        Juego ahorcado = new Juego();
+        ahorcado.inicializarJuego();
 
-        ViewBag.Tablero = Juego.tablero;
-        ViewBag.palabra = Juego.palabra;
-        ViewBag.letrasAdivinadas = Juego.letrasAdivinadas;
-        ViewBag.letrasUsadas = Juego.letrasUsadas;
-        ViewBag.cantLetras = Juego.cantLetras;
+        ViewBag.Tablero = ahorcado.tablero;
+        ViewBag.palabra = ahorcado.palabra;
+        ViewBag.letrasAdivinadas = ahorcado.letrasAdivinadas;
+        ViewBag.letrasUsadas = ahorcado.letrasUsadas;
+        ViewBag.cantLetras = ahorcado.cantLetras;
+
+        HttpContext.Session.SetString("ahorcado", Objeto.ObjectToString(ahorcado));
 
         return View();
     }
-
+    
     public IActionResult Ganaste()
     {
         return View("Ganaste");
@@ -33,9 +37,11 @@ public class HomeController : Controller
 
     public IActionResult JugarLetra(char letra)
     {
-        Juego.Letra(letra);
+        Juego ahorcado = Objeto.StringToObject<Juego>(HttpContext.Session.GetString("ahorcado"));
+        
+        ahorcado.Letra(letra);
 
-        if (Juego.verificarPalabra())
+        if (ahorcado.verificarPalabra())
         {
             return RedirectToAction("Ganaste");
         }
@@ -45,20 +51,23 @@ public class HomeController : Controller
 
     public IActionResult VolverAJugar()
     {
-        ViewBag.palabra = Juego.palabra;
-        ViewBag.letrasUsadas = Juego.letrasUsadas;
-        ViewBag.letrasAdivinadas = Juego.letrasAdivinadas;
-        ViewBag.cantIntentos = Juego.cantIntentos;
-        ViewBag.cantLetras = Juego.cantLetras;
-        ViewBag.Tablero = Juego.tablero;
+        Juego ahorcado = Objeto.StringToObject<Juego>(HttpContext.Session.GetString("ahorcado"));
+
+        ViewBag.palabra = ahorcado.palabra;
+        ViewBag.letrasUsadas = ahorcado.letrasUsadas;
+        ViewBag.letrasAdivinadas = ahorcado.letrasAdivinadas;
+        ViewBag.cantIntentos = ahorcado.cantIntentos;
+        ViewBag.cantLetras = ahorcado.cantLetras;
+        ViewBag.Tablero = ahorcado.tablero;
 
         return View("Index");
     }
     [HttpPost]
     public IActionResult arriesgoPalabra(string palabra)
     {
-        Juego.cantIntentos++;
-        bool acerto = palabra.ToLower() == Juego.palabra;
+        Juego ahorcado = Objeto.StringToObject<Juego>(HttpContext.Session.GetString("ahorcado"));
+        ahorcado.cantIntentos++;
+        bool acerto = palabra.ToLower() == ahorcado.palabra;
         if (acerto)
         {
             return RedirectToAction("Ganaste");
