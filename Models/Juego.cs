@@ -1,12 +1,19 @@
+using Newtonsoft.Json;
 namespace TP04_Grinstein_Ledezma.Models;
 
 public class Juego{
 
-     public string palabra {get; private set;} = "";
+    [JsonProperty]
+     public string palabra {get; private set;} = "leocrack";
+    [JsonProperty]
      public List<char> letrasUsadas {get; private set;} = new List<char>();
+    [JsonProperty]
      public int cantIntentos {get; set;}
+    [JsonProperty]
      public List<char> letrasAdivinadas {get; private set;} = new List<char>();
+    [JsonProperty]
      public int cantLetras {get; private set;}
+    [JsonProperty]
      public string tablero {get; private set;} = "";
 
      public void inicializarJuego(){
@@ -21,9 +28,10 @@ public class Juego{
 
     public  bool Letra(char intento)
     {
-        if (intentoYaUsado(intento))
+        if (intentoYaUsado(intento)){
+            actualizarTablero();
             return false;
-
+        }
         cantIntentos++;
         letrasUsadas.Add(intento);
 

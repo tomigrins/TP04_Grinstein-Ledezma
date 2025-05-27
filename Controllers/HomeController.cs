@@ -41,11 +41,11 @@ public class HomeController : Controller
         
         ahorcado.Letra(letra);
 
-        if (ahorcado.verificarPalabra())
-        {
-            return RedirectToAction("Ganaste");
-        }
-
+        // if (acerto)
+        // {
+        //     return RedirectToAction("Ganaste");
+        // }
+        HttpContext.Session.SetString("ahorcado", Objeto.ObjectToString(ahorcado));
         return RedirectToAction("VolverAJugar");
     }
 
@@ -59,7 +59,6 @@ public class HomeController : Controller
         ViewBag.cantIntentos = ahorcado.cantIntentos;
         ViewBag.cantLetras = ahorcado.cantLetras;
         ViewBag.Tablero = ahorcado.tablero;
-
         return View("Index");
     }
     [HttpPost]
@@ -76,6 +75,7 @@ public class HomeController : Controller
         {
             return RedirectToAction("VolverAJugar");
         }
+        HttpContext.Session.SetString("ahorcado", Objeto.ObjectToString(ahorcado));
     }
 
 }
